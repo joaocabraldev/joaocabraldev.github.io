@@ -8,13 +8,13 @@
 
 		<title>Calculadora PWA</title>
 
-		<link rel="shortcut icon" href="/pwa/favicon.ico" type="image/x-icon" />
-		<link rel="icon" href="/pwa/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-		<link rel="manifest" href="/pwa/manifest.json" />
+		<link rel="manifest" href="manifest.json" />
 
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" media="bogus" />
-        <link rel="stylesheet" href="/pwa/styles.css" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+        <link rel="stylesheet" href="styles.css" />
 
 	</head>
 	</body>
@@ -117,12 +117,12 @@
 			</section>
 		</main>
 
-		<script async="true" src="/pwa/sw.js"></script>
-		<script src="/pwa/app.js"></script>
+		<script async="true" src="sw.js"></script>
+		<script src="app.js"></script>
 
         <script>
             if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/pwa/sw.js')
+                navigator.serviceWorker.register('sw.js')
                   .then(function () {
                     console.log('service worker registered');
                   })
