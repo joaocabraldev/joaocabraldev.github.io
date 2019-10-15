@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<title>Calculadora PWA</title>
+
+		<link rel="shortcut icon" href="/pwa/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="/pwa/favicon.ico" type="image/x-icon" />
+
+		<link rel="manifest" href="/pwa/manifest.json" />
+
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+        <link rel="stylesheet" href="/pwa/styles.css" />
+
+        <script src="/pwa/sw.js"></script>
+
+	</head>
+	</body>
+		<main class="w3-container">
+			<header class="w3-row">
+				<h1>Calculadora PWA</h1>
+			</header>
+			<section>
+				<article class="w3-row">
+					<input class="w3-input" id="txtCalc" type="text" readonly="readonly" />
+				</article>
+
+				<article class="w3-row">
+					<div class="w3-col s3 m3 l3">
+						<button id="ce" class="btn w3-btn w3-gray">CE</button>
+					</div>
+					<div class="w3-col s3 m3 l3">
+						<button id="c" class="btn w3-btn w3-gray" style="width: 90%">C</button>
+					</div>
+					<div class="w3-col s3 m3 l3">
+						<button id="back" class="btn w3-btn w3-gray" style="width: 90%"><=</button>
+					</div>
+					<div class="w3-col s3 m3 l3">
+						<button id="div"  class="btn w3-btn w3-gray" style="width: 90%">/</button>
+					</div>
+				</article>
+
+				<article class="w3-row">
+                    <div class="w3-col s3 m3 l3">
+                        <button id="btn7" class="btn w3-btn w3-gray">7</button>
+					</div>
+
+                    <div class="w3-col s3 m3 l3">
+                        <button id="btn8" class="btn w3-btn w3-gray">8</button>
+					</div>
+
+                    <div class="w3-col s3 m3 l3">
+                        <button id="btn9" class="btn w3-btn w3-gray">9</button>
+					</div>
+
+                    <div class="w3-col s3 m3 l3">
+                        <button id="times" class="btn w3-btn w3-gray">X</button>
+                    </div>
+				</article>
+
+				<article class="w3-row">
+					<div class="w3-col s3 m3 l3">
+                        <button id="btn4"  class="btn w3-btn w3-gray">4</button>
+					</div>
+
+                    <div class="w3-col s3 m3 l3">
+                        <button id="btn5"  class="btn w3-btn w3-gray">5</button>
+					</div>
+
+                    <div class="w3-col s3 m3 l3">
+                        <button id="btn6"  class="btn w3-btn w3-gray">6</button>
+					</div>
+
+                    <div class="w3-col s3 m3 l3">
+                        <button id="minus" class="btn w3-btn w3-gray">-</button>
+                    </div>
+                </article>
+
+				<article class="w3-row">
+					<div class="w3-col s3 m3 l3">
+                        <button id="btn1" class="btn w3-btn w3-gray">1</button>
+					</div>
+
+                    <div class="w3-col s3 m3 l3">
+                        <button id="btn2" class="btn w3-btn w3-gray">2</button>
+					</div>
+
+                    <div class="w3-col s3 m3 l3">
+                        <button id="btn3" class="btn w3-btn w3-gray">3</button>
+					</div>
+
+                    <div class="w3-col s3 m3 l3">
+                        <button id="plus" class="btn w3-btn w3-gray">+</button>
+                    </div>
+				</article>
+
+				<article class="w3-row">
+                    <div class="w3-col s3 m3 l3">
+                        <button id="signal" class="btn w3-btn w3-gray" disabled="disabled">+/-</button>
+					</div>
+
+                    <div class="w3-col s3 m3 l3">
+                        <button id="btn0"   class="btn w3-btn w3-gray">0</button>
+					</div>
+
+                    <div class="w3-col s3 m3 l3">
+                        <button id="comma"  class="btn w3-btn w3-gray"disabled="disabled">,</button>
+					</div>
+
+                    <div class="w3-col s3 m3 l3">
+                        <button id="equals" class="btn w3-btn w3-gray">=</button>
+                    </div>
+                </article>
+			</section>
+		</main>
+
+		<script src="/pwa/app.js"></script>
+
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/pwa/sw.js')
+                  .then(function () {
+                    console.log('service worker registered');
+                  })
+                  .catch(function () {
+                    console.warn('service worker failed');
+                  });
+            }
+        </script>
+	</body>
+</html>

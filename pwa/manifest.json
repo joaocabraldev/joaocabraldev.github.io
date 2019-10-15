@@ -1,0 +1,21 @@
+{
+  "name": "PWA",
+  "short_name": "PWA",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FFF",
+  "theme_color": "#000",
+  "orientation":"portrait",
+  "icons": [
+    {
+      "src": "images/calc_144.png",
+      "sizes": "144X144",
+      "type": "image/png"
+    },
+    {
+      "src": "images/calc_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
