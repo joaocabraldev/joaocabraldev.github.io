@@ -17,6 +17,8 @@ article {
 	width: 90%;
 }
 
+.invisible { display: none; }
+
 #txtCalc {
 	height: 50px;
 	width: 98%;

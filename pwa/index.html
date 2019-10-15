@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="Description" content="Calculadora PWA" />
 
 		<title>Calculadora PWA</title>
 
@@ -12,10 +13,8 @@
 
 		<link rel="manifest" href="/pwa/manifest.json" />
 
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" media="bogus" />
         <link rel="stylesheet" href="/pwa/styles.css" />
-
-        <script src="/pwa/sw.js"></script>
 
 	</head>
 	</body>
@@ -25,6 +24,7 @@
 			</header>
 			<section>
 				<article class="w3-row">
+					<label class="invisible" for="txtCalc" />
 					<input class="w3-input" id="txtCalc" type="text" readonly="readonly" />
 				</article>
 
@@ -117,6 +117,7 @@
 			</section>
 		</main>
 
+		<script async="true" src="/pwa/sw.js"></script>
 		<script src="/pwa/app.js"></script>
 
         <script>
