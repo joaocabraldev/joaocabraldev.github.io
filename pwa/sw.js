@@ -9,7 +9,8 @@ self.addEventListener('install', function(e) {
        '/pwa/index.html',
        '/pwa/app.js',
        '/pwa/styles.css',
-       '/pwa/images'
+       '/pwa/images/calc_144.png',
+      '/pwa/images/calc_512.png'
      ])
      .then(() => self.skipWaiting());
    })
