@@ -1,0 +1,20 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.btn {
+    text-align: center;
+    background-color: gray;
+
+    width: 100px;
+    height: 100px;
+}
+
+#txtCalc {
+	height: 50px;
+    width: 100%;
+	text-align: right;
+	font-size: 30px;
+}
