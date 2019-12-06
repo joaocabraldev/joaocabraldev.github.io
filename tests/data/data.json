@@ -1,0 +1,14 @@
+{
+    "index": {
+        "title": "joaocabraldev",
+        "header": "joaocabraldev",
+        "lead": "Portifólio para João Antônio Cabral",
+        "description": "Portifólio com Páginas de Repositórios e Protótipos no Git. Ainda em construção.",
+        "links": {
+            "home": "Home",
+            "projetos": "projetos",
+            "prototipo": "Protótipo Modal",
+            "calculadora": "Calcudarora PWA"
+        }
+    }
+}
