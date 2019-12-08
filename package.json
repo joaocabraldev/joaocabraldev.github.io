@@ -10,31 +10,33 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "eslint": "eslint *.js **/*.js",
-    "eslint_fix": "eslint *.js **/*.js --fix",
+    "eslint": "eslint tests/data/*.js tests/pages/*.js tests/specs/*.js",
+    "eslint_fix": "eslint tests/data/*.js tests/pages/*.js tests/specs/*.js",
     "test": "wdio wdio.conf.js",
-    "allure": "allure generate -c ./tests/allure-results && allure open"
+    "allure": "allure generate ./tests/reports/allure-results -c -o ./tests/reports/allure-reports && allure open ./tests/reports/allure-reports"
   },
   "dependencies": {
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "eslint": "^6.7.2",
-    "eslint-config-google": "^0.14.0",
-    "nodemon": "^1.19.4",
-    "@babel/cli": "^7.7.4",
-    "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
     "@babel/register": "^7.7.4",
-    "@wdio/cli": "^5.16.10",
-    "@wdio/local-runner": "^5.16.10",
-    "@wdio/mocha-framework": "^5.16.10",
-    "@wdio/spec-reporter": "^5.16.5",
-    "@wdio/sync": "^5.16.10",
-    "@wdio/allure-reporter": "^5.16.10",
+    "@wdio/allure-reporter": "^5.16.11",
+    "@wdio/cli": "^5.16.13",
+    "@wdio/local-runner": "^5.16.13",
+    "@wdio/mocha-framework": "^5.16.13",
+    "@wdio/spec-reporter": "^5.16.11",
+    "@wdio/sync": "^5.16.14",
     "allure-commandline": "^2.13.0",
     "chromedriver": "^78.0.1",
     "common.js": "^1.1.1",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "^2.0.1",
     "wdio-chromedriver-service": "^5.0.2"
   }
 }
