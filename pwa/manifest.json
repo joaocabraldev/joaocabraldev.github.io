@@ -9,7 +9,7 @@
   "icons": [
     {
       "src": "/pwa/images/calc_144.png",
-      "sizes": "144X144",
+      "sizes": "144x144",
       "type": "image/png"
     },
     {

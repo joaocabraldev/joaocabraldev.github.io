@@ -1,7 +1,7 @@
 {
   "name": "Calculadora INSS PWA",
   "short_name": "calc_inss",
-  "start_url": "/calculadora_inss_pwa",
+  "start_url": "/calculadora_inss_pwa/index.html",
   "display": "standalone",
   "background_color": "#FFF",
   "theme_color": "#009688",
