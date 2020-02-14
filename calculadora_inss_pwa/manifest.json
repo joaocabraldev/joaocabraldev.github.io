@@ -3,8 +3,8 @@
   "short_name": "calc_inss",
   "start_url": "/calculadora_inss_pwa/index.html",
   "display": "standalone",
-  "background_color": "#FFF",
-  "theme_color": "#009688",
+  "background_color": "#000",
+  "theme_color": "#2196F3",
   "orientation":"portrait",
   "icons": [
     {

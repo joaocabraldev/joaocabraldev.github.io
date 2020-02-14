@@ -29,6 +29,8 @@
 
         <nav id="menu" class="w3-bar w3-blue">
             <a class="w3-bar-item w3-button">Cálculo INSS</a>
+            <a id="installBtn"
+                class="w3-bar-item w3-button w3-right">Instalar APP</a>
         </nav>
 
         <div class="w3-container">
@@ -81,13 +83,37 @@
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js')
-                .then(function () {
-                    console.log('service worker registered');
-                })
                 .catch(function () {
                     console.warn('service worker failed');
                 });
         }
+
+        /**
+         * Install button
+         */
+        let deferredPrompt;
+        const installBtn = document.getElementById('installBtn');
+        installBtn.style.display = 'none';
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'block';
+
+            installBtn.addEventListener('click', (e) => {
+                installBtn.style.display = 'none';
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the A2HS prompt');
+                    } else {
+                        console.log('User dismissed the A2HS prompt');
+                    }
+                    deferredPrompt = null;
+                });
+            });
+
+        });
     </script>
 
 </body>
