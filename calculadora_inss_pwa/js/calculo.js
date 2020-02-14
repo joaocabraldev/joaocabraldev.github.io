@@ -198,5 +198,3 @@ const calculo = {
         return calculo.resultado;
     }
 };
-
-module.exports = calculo;
