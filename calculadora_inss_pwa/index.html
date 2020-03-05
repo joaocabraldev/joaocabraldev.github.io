@@ -28,12 +28,13 @@
         </header>
 
         <nav id="menu" class="w3-bar w3-blue">
-            <a class="w3-bar-item w3-button">Cálculo INSS</a>
+            <a id="calculoBtn" class="w3-bar-item w3-button">Cálculo INSS</a>
+            <a id="tabelaBtn" class="w3-bar-item w3-button">Tabelas INSS</a>
             <a id="installBtn"
                 class="w3-bar-item w3-button w3-right">Instalar APP</a>
         </nav>
 
-        <div class="w3-container">
+        <div id="calculo" class="w3-container">
             <div class="w3-row">
                 <h3 class="w3-col s12 m12 l12">Cálculo INSS</h3>
             </div>
@@ -76,7 +77,41 @@
                 <span id="spanAliquota"></span>% =
                 R$ <span id="spanCalculo"></span>
             </div>
-        </div> <!-- container -->
+        </div> <!-- calculo -->
+
+        <div id="tabela" class="w3-container">
+            <h3>Tabela INSS</h3>
+
+            <table class="w3-table-all">
+                <tr class="w3-blue">
+                    <th>Faixa</th>
+                    <th>Alíquota</th>
+                    <th>Limite desconto</th>
+                </tr>
+                <tr>
+                    <td>Até R$1.045,00</td>
+                    <td>7,5%</td>
+                    <td>R$78,375</td>
+                </tr>
+                <tr>
+                    <td>De R$1.045,01 até R$2.089,60</td>
+                    <td>9%</td>
+                    <td>R$94,0131</td>
+                </tr>
+                <tr>
+                    <td>De R$2.089,61 até R$3.134,40</td>
+                    <td>12%</td>
+                    <td>R$125,3748</td>
+                </tr>
+                <tr>
+                    <td>De R$3.134,41 até R$6.101,06</td>
+                    <td>14%</td>
+                    <td>R$415,331</td>
+                </tr>
+            </table>
+
+            <p>Limite de desconto: <b>R$713,09</b></p>
+        </div> <!-- tabela -->
 
     </main>
 
@@ -87,6 +122,24 @@
                     console.warn('service worker failed');
                 });
         }
+
+        const calculoBtn = document.getElementById('calculoBtn');
+        calculoBtn.addEventListener('click', () => {
+            const calculo = document.getElementById('calculo');
+            calculo.style.display = 'block';
+
+            const tabela = document.getElementById('tabela');
+            tabela.style.display = 'none';
+        })
+
+        const tabelaBtn = document.getElementById('tabelaBtn');
+        tabelaBtn.addEventListener('click', () => {
+            const calculo = document.getElementById('calculo');
+            calculo.style.display = 'none';
+
+            const tabela = document.getElementById('tabela');
+            tabela.style.display = 'block';
+        });
 
         /**
          * Install button
