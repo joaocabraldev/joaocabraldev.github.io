@@ -116,57 +116,7 @@
     </main>
 
     <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-                .catch(function () {
-                    console.warn('service worker failed');
-                });
-        }
-
-        const calculoBtn = document.getElementById('calculoBtn');
-        calculoBtn.addEventListener('click', () => {
-            const calculo = document.getElementById('calculo');
-            calculo.style.display = 'block';
-
-            const tabela = document.getElementById('tabela');
-            tabela.style.display = 'none';
-        })
-
-        const tabelaBtn = document.getElementById('tabelaBtn');
-        tabelaBtn.addEventListener('click', () => {
-            const calculo = document.getElementById('calculo');
-            calculo.style.display = 'none';
-
-            const tabela = document.getElementById('tabela');
-            tabela.style.display = 'block';
-        });
-
-        /**
-         * Install button
-         */
-        let deferredPrompt;
-        const installBtn = document.getElementById('installBtn');
-        installBtn.style.display = 'none';
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            installBtn.style.display = 'block';
-
-            installBtn.addEventListener('click', (e) => {
-                installBtn.style.display = 'none';
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('User accepted the A2HS prompt');
-                    } else {
-                        console.log('User dismissed the A2HS prompt');
-                    }
-                    deferredPrompt = null;
-                });
-            });
-
-        });
+        app.inicializa();
     </script>
 
 </body>

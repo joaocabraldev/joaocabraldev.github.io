@@ -2,6 +2,29 @@
  * Constante para a parte Visual do sistema.
  */
 const visual = {
+
+  /**
+   * Mostra a parte do Cálculo.
+   */
+  mostraCalculo: () => {
+    const calculo = document.getElementById('calculo');
+    calculo.style.display = 'block';
+
+    const tabela = document.getElementById('tabela');
+    tabela.style.display = 'none';
+  },
+
+  /**
+   * Mostra a parte da Tabela INSS.
+   */
+  mostraTabela: () => {
+    const calculo = document.getElementById('calculo');
+    calculo.style.display = 'none';
+
+    const tabela = document.getElementById('tabela');
+    tabela.style.display = 'block';
+  },
+
   /**
    * Obtém o tipo de cálculo conforme selecionado
    * na tela usando os radiobuttons com name rbINSS.

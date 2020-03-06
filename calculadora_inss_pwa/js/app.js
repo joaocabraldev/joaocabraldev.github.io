@@ -5,6 +5,66 @@
 const app = {
 
   /**
+   * Inicializa o aplicativo.
+   */
+  inicializa: () => {
+    app.iniciaServiceWorker();
+    app.preparaNavegacao();
+    app.inicializaBotaoInstalacao();
+  },
+
+  /**
+   * Inicializa o ServiceWorker
+   */
+  iniciaServiceWorker: () => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+          .catch(() => {
+            console.warn('service worker failed');
+          });
+    }
+  },
+
+  /**
+   * Prepara os botões de Navegação.
+   */
+  preparaNavegacao: () => {
+    const calculoBtn = document.getElementById('calculoBtn');
+    calculoBtn.addEventListener('click', visual.mostraCalculo);
+    const tabelaBtn = document.getElementById('tabelaBtn');
+    tabelaBtn.addEventListener('click', visual.mostraTabela);
+  },
+
+  /**
+   * Inicializa o botão de Instalação.
+   */
+  inicializaBotaoInstalacao: () => {
+    let deferredPrompt;
+    const installBtn = document.getElementById('installBtn');
+    installBtn.style.display = 'none';
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installBtn.style.display = 'block';
+
+      installBtn.addEventListener('click', (e) => {
+        installBtn.style.display = 'none';
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+          } else {
+            console.log('User dismissed the A2HS prompt');
+          }
+          deferredPrompt = null;
+        });
+      });
+
+    });
+  },
+
+  /**
    * Realiza o cálculo do INSS.
    * Calcula conforme o tipo de Cálculo.
    */
