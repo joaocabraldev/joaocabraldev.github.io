@@ -66,8 +66,7 @@ const app = {
 
   preparaInputText: () => {
     const txtSalario = document.getElementById('txtSalario');
-    txtSalario.addEventListener('keydown', (e) => {
-      e.preventDefault();
+    txtSalario.addEventListener('keyup', (e) => {
       if (e.key == 'Enter') {
         app.calcular();
       }
