@@ -1,3 +1,5 @@
+/* global visual, calculo */
+
 /**
  * Constante do aplicativo.
  * Contém os métodos para cálculo do INSS.
@@ -49,7 +51,7 @@ const app = {
       deferredPrompt = e;
       installBtn.style.display = 'block';
 
-      installBtn.addEventListener('click', (e) => {
+      installBtn.addEventListener('click', () => {
         installBtn.style.display = 'none';
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then((choiceResult) => {
@@ -64,6 +66,9 @@ const app = {
     });
   },
 
+  /**
+   * Prepara o input para receber tecla Enter.
+   */
   preparaInputText: () => {
     const txtSalario = document.getElementById('txtSalario');
     txtSalario.addEventListener('keyup', (e) => {
